@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { ProductoComponent } from './producto/producto.component';
-import { ListaProductosComponent } from './Paginas/lista-productos/lista-productos.component';
+import { PersonaComponent } from './persona/persona.component';
+import { ListaPersonasComponent } from './Paginas/lista-personas/lista-personas.component';
 
 export const routes: Routes = [
-    {path: '', component: ProductoComponent},
-    {path: 'producto', component: ProductoComponent},
-    {path: 'producto/:idProducto', component: ProductoComponent},
-    {path: 'listaProducto', component: ListaProductosComponent}
+    {path: '', component: PersonaComponent},
+    {path: 'persona', component: PersonaComponent},
+    {path: 'persona/:idPersona', component: PersonaComponent},
+    {path: 'listaPersonas', component: ListaPersonasComponent}
 ];

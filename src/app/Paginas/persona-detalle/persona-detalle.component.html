@@ -1,0 +1,18 @@
+<mat-card appearance="outlined" [ngClass]="{fondo:even,color:i<4,fondo2:odd,color2:i>3}">
+    <mat-card-content>{{this.miPersona.usuario}} - {{this.miPersona.nombre}} - {{this.miPersona.apellido}} - {{this.miPersona.edad}}
+        <!-- Contenedor de botones para la acción de editar y eliminar -->
+        <div class="example-button-container ">
+
+            <!-- Botón de editar -->
+            <button mat-fab aria-label="Example icon button with a delete icon" class="boton-editar" (click)="editar()">
+                <mat-icon>edit</mat-icon>
+            </button>
+            
+            <!-- Botón de eliminar -->
+            <button mat-fab aria-label="Example icon button with a delete icon" class="boton-eliminar" (click)="eliminar()">
+                <mat-icon>delete</mat-icon>
+            </button>
+
+        </div>    
+    </mat-card-content>
+</mat-card>

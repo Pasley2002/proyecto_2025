@@ -1,0 +1,9 @@
+<!-- Este div se renderiza solo si hay al menos una persona en la lista -->
+<div *ngIf="this.personas.length>0">
+    <!-- *ngFor recorre la lista 'personas' y crea un div para cada persona -->
+    <div *ngFor="let pers of this.personas;let i=index;let odd=odd;let even= even;">
+        <!-- Se pasa la persona actual (pers) como entrada al componente hijo 'app-persona-detalle' -->
+        <app-persona-detalle [miAtributo]="pers" [indice]="i" [odd] = "odd" 
+        (edita) = "editar($event)" (elimina) = "eliminar($event)"></app-persona-detalle>
+    </div>
+</div>

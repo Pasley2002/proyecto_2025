@@ -1,0 +1,53 @@
+<!-- Muestra el ID actual de la persona -->
+{{this.miPersona.id}}
+
+<!-- Formulario de ingreso de datos de una persona -->
+<form class="example-form">
+
+     <!-- Campo para el usuario -->
+    <mat-form-field class="example-full-width">
+        <mat-label>usuario</mat-label>
+        <!-- Enlaza bidireccionalmente el input con la propiedad usuario -->
+        <input type="text" name="usuario" matInput placeholder="usuario de la persona" [(ngModel)]="this.miPersona.usuario">
+    </mat-form-field>
+
+    <!-- Muestra un mensaje condicional si el campo usuario está vacío -->
+    <i *ngIf="(this.miPersona.usuario??'') == '' then esVerdadrero;else estructuraSINO">Ingrese valor </i>
+
+    <!-- Campo para el nombre -->
+    <mat-form-field class="example-full-width">
+        <mat-label>nombre</mat-label>
+        <input type="text" matInput name="nombre" placeholder="nombre de la persona" [(ngModel)]="this.miPersona.nombre">
+    </mat-form-field>
+
+    <!-- Campo para el apellido, con evento de teclado opcional -->
+    <mat-form-field class="example-full-width">
+        <mat-label>apellido</mat-label>
+        <!-- `log($event)` se ejecuta al presionar una tecla -->
+        <input type="text" matInput name="apellido" (keypress)="log($event)" placeholder="apellido de la persona" [(ngModel)]="this.miPersona.apellido">
+    </mat-form-field>
+
+    <!-- Campo para la edad -->
+    <mat-form-field class="example-full-width">
+        <mat-label>edad</mat-label>
+        <input type="text" matInput name="edad" placeholder="edad de la persona" [(ngModel)]="this.miPersona.edad">
+    </mat-form-field>
+
+    <!-- Muestra los botones solo si la edad no está vacía -->
+    <div *ngIf="this.miPersona.edad??'' != ''">
+        <input type="button" value="Limpiar" (click)="limpiar()">
+        <input type="button" value="Guardar" (click)="guardar()">
+    </div>
+</form>
+
+<!-- Plantilla alternativa que se muestra si el usuario fue ingresado -->
+<ng-template #estructuraSINO>
+    <label>
+        muchas gracias
+    </label>
+</ng-template>
+
+<!-- Plantilla que se muestra si el campo usuario está vacío -->
+<ng-template #esVerdadrero>
+    <b>Ingresar valor!!!</b>
+</ng-template>

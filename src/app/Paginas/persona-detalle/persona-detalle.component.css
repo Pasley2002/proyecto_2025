@@ -1,0 +1,13 @@
+.boton-editar {
+  background-color: #ffeb3b;
+  color: black;
+}
+
+.boton-eliminar {
+  background-color: #f44336;
+  color: white;
+}
+
+.example-button-container button {
+  margin-right: 10px;
+}
